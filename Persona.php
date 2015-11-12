@@ -1,104 +1,91 @@
 <?php
 
 class Persona {
+	/**
+	* Clase que abstrae a una persona
+	* Esta clase contiene el nombre y el contacto (email)
+	**/
+	/** 
+     * Primer nombre de la persona
+     * @var nombre
+     */
+    private $nombre = "Pedro";
+    /** 
+     * Apellido paterno de la persona
+     * @var apellidoPaterno
+     */
+    private $apellido_paterno = "Juarez";
+    /** 
+     * Apellido materno de la persona
+     * @var apellidoMaterno
+     */
+    private $apellido_materno = "Romero";
+    /** 
+     * Correo electrónico de la persona
+     * @var correoElectronico
+     */
+    private $correo;
 
-    private $nombre;
-    private $apellidoPaterno;
-    private $apellidoMaterno;
-    private $correoElectronico;
-
-    public function __construct($nombre, $apellidoPaterno, $apellidoMaterno, $correoElectronico){
-        $this->nombre=$nombre;  
-        $this->apellidoPaterno=$apellidoPaterno;
-        $this->apellidoMaterno=$apellidoMaterno;
-        $this->correoElectronico=$correoElectronico;
+    /**
+    * Método constructor de la persona
+    * @param nombre - de la persona
+    * @param apellidoPaterno - de la persona
+    * @param apellidoMaterno - de la persona
+    * @param correoElectronico - de la persona
+    **/
+    public function __construct(){
     }
 
+    /**
+    * Método que regresa el primer nombre de la persona
+    * @return nombre de la persona
+    **/
    	public function getNombre() {
    		return $this->nombre;
    	}
+    /**
+    * Método que regresa el apellido paterno de la persona
+    * @return apellido paterno
+    **/
 
-   	public function getApellidoPaterno() {
-   		return $this->apellidoPaterno;
+    /**
+    * Método que regresa el apellido materno de la persona
+    * @return apellido materno
+    **/   
+
+    /**
+    * Método que regresa el correo de la persona
+    * @return correo electrónico de la persona
+    **/
+
+    /**
+    * Método que asigna nombre a la persona
+    **/
+   	public function setNombre($nuevoNombre) {
+   		$this->nombre = $nuevoNombre;
    	}
-   
-   	public function getApellidoMaterno() {
-   		return $this->apellidoMaterno;
-   	}
+    /**
+    * Método que asigna apellido paterno de la persona
+    **/
 
-   	public function getCorreo() {
-		return $this->$correoElectronico;
+    /**
+    * Método que asigna apellido materno de la persona
+    **/   
+
+    /**
+    * Método que asina correo de la persona
+    **/
+    
+    /**
+    * Método que regresa a un saludo a la persona con nombre $nombre
+    * @param nombre - Nombre de la persona a saludar
+    * @return  cadena con saludo
+    **/
+    public function saludaA($nombre) {
+		return "Hola ".$nombre."!\n";
 	}
-
-	public function __toString() {
-		return $this->nombre."\n".$this->apellidoPaterno."\n".$this->apellidoMaterno."\n".$this->correoElectronico;
-
-	}
-
 
 }
-
-class Cliente extends Persona {
-
-	private $username;
-	private $password;
-	private $fechaRegistro;
-
-	public function __construct($username, $password, $fechaRegistro, $nombre, $apellidoPaterno, $apellidoMaterno, $correoElectronico) {
-		parent::__construct($nombre, $apellidoPaterno, $apellidoMaterno, $correoElectronico);
-		$this->username=$username;
-		$this->password=$password;
-		$this->fechaRegistro=$fechaRegistro;
-	}
-
-	public function getUsername() {
-		return $this->username;
-	}
-
-	public function getPassword() {
-		return $this->password;
-	}
-
-	public function getFechaRegistro() {
-		return $this->$fechaRegistro;
-	}
-}
-
-class Administrador extends Persona {
-
-	private $username;
-	private $password;
-
-	public function __construct($username, $password, $nombre, $apellidoPaterno, $apellidoMaterno, $correoElectronico) {
-		parent::__construct($nombre, $apellidoPaterno, $apellidoMaterno, $correoElectronico);
-		$this->username=$username;
-		$this->password=$password;
-	}
-
-	public function getUsername() {
-		return $this->username;
-	}
-
-	public function getPassword() {
-		return $this->password;
-	}
-}
-
-$persona = new Persona("Cinthia Olivia", "Rodríguez", "Aguilar", "yomera@gmail.com");
-$per=(string)$persona;
-var_dump($per);
-
-
-//leemos la fecha del día actual
-$hoy = date("Y-m-d");
-
-$cliente = new Cliente("fulano", "secreta", $hoy, "Lala", "Lele", "Lulu", "lili@lala.com");
-$cliente=(string)$cliente;
-var_dump($cliente);
-
-$admin = new Administrador("admin", "pass", "Juan", "Mendez", "Mendiola", "jefecito@empresa.com");
-$ad=(string)$admin;
-var_dump($ad);
 
 
 ?>
