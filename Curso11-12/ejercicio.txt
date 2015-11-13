@@ -1,0 +1,10 @@
+Crear una clase pelota que posea un atributo
+llamado diametro y un método llamado botar,
+el método botar regresa la cadena "Está botando".
+
+Crear 2 subclases de la clase Pelota, modificar
+el método botar para que regrese una cadena
+distinta.
+
+En el formulario instanciar las 3 clases
+y ejecutar el método botar en las 3 instancias.
